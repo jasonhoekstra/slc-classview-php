@@ -24,7 +24,14 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
 //execute post
 $result = curl_exec($ch);
+echo $result;
 $json = json_decode($result);
+
+// If response is '401 Unauthorized', redirect back to home page for authentication
+if ($json->code == '401') {
+  header('Location: index.php');
+  die();
+}
 
 //https://localhost/api/rest/v1/teachers/<UUID>/teacherSectionAssociations/sections
 
