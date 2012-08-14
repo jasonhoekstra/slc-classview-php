@@ -4,7 +4,8 @@ session_start();
 //open connection
 $ch = curl_init();
 //https://api.sandbox.slcedu.org/api/rest/v1/studentSectionAssociations?studentId=2012al-b7019126-bcf8-11e1-8506-0247757a1887
-$url = 'https://api.sandbox.slcedu.org/api/rest/v1/students/2012an-b7022d67-bcf8-11e1-8506-0247757a1887';
+$url = 'https://api.sandbox.slcedu.org/api/rest/v1/students'; ///2012an-b7022d67-bcf8-11e1-8506-0247757a1887';
+//$url = 'https://api.sandbox.slcedu.org/api/rest/v1/students/2012an-b7022d67-bcf8-11e1-8506-0247757a1887/studentAssessments';
 //$url = 'https://api.sandbox.slcedu.org/api/rest/v1/students/2012an-b7022d67-bcf8-11e1-8506-0247757a1887/studentParentAssociations';
 //$url = 'https://api.sandbox.slcedu.org/api/rest/v1/students/2012an-b7022d67-bcf8-11e1-8506-0247757a1887/courseTranscripts/courses';
 //$url = 'https://api.sandbox.slcedu.org/api/rest/v1/students';
