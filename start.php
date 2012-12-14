@@ -24,7 +24,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
 //execute post
 $result = curl_exec($ch);
-echo $result;
+// echo $result;
 $json = json_decode($result);
 
 // If response is '401 Unauthorized', redirect back to home page for authentication

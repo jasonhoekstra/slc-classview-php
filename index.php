@@ -2,13 +2,7 @@
 
 session_start();
 
-const CLIENT_ID     = 'your_application_client_id';
-const CLIENT_SECRET = 'your_application_client_secret';
-
-const REDIRECT_URI           = 'http://localhost/slc/index.php';
-const AUTHORIZATION_ENDPOINT = 'https://api.sandbox.slcedu.org/api/oauth/authorize';
-const TOKEN_ENDPOINT         = 'https://api.sandbox.slcedu.org/api/oauth/token';
-
+include 'settings.php';
 
 // If the session verification code is not set, redirect to the SLC Sandbox authorization endpoint
 if (!isset($_GET['code'])) {
