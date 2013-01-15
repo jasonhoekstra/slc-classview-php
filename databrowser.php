@@ -30,6 +30,14 @@ curl_setopt($ch, CURLOPT_POST, FALSE);
 curl_setopt($ch, CURLOPT_HTTPGET, TRUE);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
+if (DISABLE_SSL_CHECKS == TRUE) {
+// WARNING: this would prevent curl from detecting a 'man in the middle' attack
+// See note in settings.php 
+  curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+  curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+}
+
+
 //execute post
 $result = curl_exec($ch);
 

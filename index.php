@@ -22,6 +22,14 @@ $ch = curl_init();
 //set the url, number of POST vars, POST data
 curl_setopt($ch,CURLOPT_URL,$url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+if (DISABLE_SSL_CHECKS == TRUE) {
+// WARNING: this would prevent curl from detecting a 'man in the middle' attack
+// See note in settings.php 
+  curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+  curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+}
+
 curl_setopt($ch, CURLOPT_HEADER, 'Content-Type: application/vnd.slc+json');
 curl_setopt($ch, CURLOPT_HEADER, 'Accept: application/vnd.slc+json');
 
